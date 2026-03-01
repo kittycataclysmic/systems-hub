@@ -479,7 +479,7 @@ function EmailGate({ selected, onClose }) {
     // Add a custom field called "trifecta" to capture the radio selection
     // ─────────────────────────────────────────────────────────────────────
     try {
-      await fetch("https://app.kit.com/forms/YOUR_KIT_FORM_ID/subscriptions", {
+      await fetch("https://app.kit.com/forms/0f05a65571/subscriptions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
