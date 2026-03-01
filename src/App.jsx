@@ -11,7 +11,7 @@ const GLOBAL_CSS = `
   body { background: #fff; }
 
   .mm-app {
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: 'Libre Baskerville', Georgia, serif; 
     background: #fff;
     color: #0a0a0a;
     min-height: 100vh;
