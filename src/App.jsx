@@ -479,14 +479,14 @@ function EmailGate({ selected, onClose }) {
     // Add a custom field called "trifecta" to capture the radio selection
     // ─────────────────────────────────────────────────────────────────────
     try {
-      await fetch("https://app.kit.com/forms/0f05a65571/subscriptions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email_address: email,
-          fields: { trifecta: chosenTrifecta?.id ?? "" },
-        }),
-      });
+const formData = new FormData();
+formData.append("email_address", email);
+formData.append("fields[trifecta]", chosenTrifecta?.id ?? "");
+
+await fetch("https://app.kit.com/forms/9147039/subscriptions", {
+  method: "POST",
+  body: formData,
+});
     } catch (_) {
       // Silent fail — still show success so UX isn't blocked
     }
