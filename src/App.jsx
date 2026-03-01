@@ -553,8 +553,7 @@ function EmailGate({ selected, onClose }) {
             <span className="success-check">✓</span>
             <h3 className="success-title">You're In</h3>
             <p className="success-body">
-              Check your inbox — your access link is on its way.<br />
-              Can't wait? Go straight to your trifecta now.
+You're all set. Click below to access your free trifecta now.
             </p>
             {chosenTrifecta && (
               <a className="success-link" href={chosenTrifecta.url}>
