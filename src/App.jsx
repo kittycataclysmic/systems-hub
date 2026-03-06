@@ -443,7 +443,8 @@ function EmailGate({ selected, onClose }) {
   const [loading, setLoading] = useState(false);
 
   const chosenTrifecta = TRIFECTAS.find(t => t.id === choice);
-  const canSubmit = choice && email.includes("@") && email.includes(".");
+  const emailRegex = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+  const canSubmit = choice && emailRegex.test(email.trim());
 
   const handleSubmit = async () => {
     if (!canSubmit) return;
@@ -511,7 +512,7 @@ function EmailGate({ selected, onClose }) {
             <span className="success-check">✓</span>
             <h3 className="success-title">You're All Set</h3>
             <p className="success-body">
-              You're all set. Click below to access your free trifecta now.
+              Click below to access your free trifecta now.
             </p>
             {chosenTrifecta && (
               <a className="success-link" href={chosenTrifecta.url}>
