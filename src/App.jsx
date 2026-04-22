@@ -8,7 +8,7 @@ const trifectas = [
     title: 'Starter Trifecta',
     desc: 'No clients, no portfolio, no idea where to start. Three tools to find your niche, build your first application, and launch your VA career with a system behind it.',
     tools: ['Application Killer Audit', 'First Client Blueprint', 'VA Launch Kit Builder'],
-    href: 'https://app.marginmomentum.co',
+    href: 'https://starter.marginmomentum.co/',
     cta: 'Access Starter Trifecta',
   },
   {
@@ -17,7 +17,7 @@ const trifectas = [
     title: 'First 90 Days',
     desc: 'You landed a client. Now keep them. Three tools to professionalise your first week, make your value visible, and have the conversation that turns a project into a retainer.',
     tools: ['First Client Readiness Audit', 'First 90 Days Blueprint', 'Client Success System Builder'],
-    href: 'https://app.marginmomentum.co',
+    href: 'https://first90.marginmomentum.co/',
     cta: 'Access First 90 Days',
   },
   {
@@ -26,7 +26,7 @@ const trifectas = [
     title: 'Lean Trifecta',
     desc: 'You have clients but income is unpredictable. Three tools to audit your retainer readiness, follow the blueprint, and build the system that keeps clients paying month after month.',
     tools: ['Retainer Readiness Audit', 'The Retainer Blueprint', 'Stable Income System Builder'],
-    href: 'https://app.marginmomentum.co',
+    href: 'https://lean.marginmomentum.co/',
     cta: 'Access Lean Trifecta',
   },
 ]
