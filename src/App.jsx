@@ -272,7 +272,7 @@ export default function App() {
               An AI-written brand statement ready to paste into your resume and proposals.
               Find your VA niche in 5 minutes — then come back and pick your stage.
             </p>
-            <a href="https://app.marginmomentum.co" className="btn-primary">
+            <a href="https://niche.marginmomentum.co" className="btn-primary">
               Find My Niche →
             </a>
           </div>
