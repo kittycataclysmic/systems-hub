@@ -14,7 +14,7 @@ const trifectas = [
   {
     number: '02',
     stage: 'Stage 02 — Just Got Your First Client',
-    title: 'First 90 Days',
+    title: 'First 90 Days Trifecta',
     desc: 'You landed a client. Now keep them. Three tools to professionalise your first week, make your value visible, and have the conversation that turns a project into a retainer.',
     tools: ['First Client Readiness Audit', 'First 90 Days Blueprint', 'Client Success System Builder'],
     href: 'https://first90.marginmomentum.co/',
