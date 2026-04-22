@@ -9,6 +9,7 @@
   --text-on-dark: #E8E4DF;
   --text-muted: #A09C96;
   --rule: rgba(237,233,227,0.12);
+  --nav-h: 65px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,7 +39,8 @@ body::before {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding: 20px 48px;
+  height: var(--nav-h);
+  padding: 0 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,11 +56,12 @@ body::before {
   letter-spacing: 0.08em;
   color: var(--fog);
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .nav-wordmark span {
   color: var(--steel);
-  font-size: 14px;
+  font-size: 13px;
   font-family: 'DM Mono', monospace;
   letter-spacing: 0.15em;
   margin-left: 10px;
@@ -67,18 +70,19 @@ body::before {
 
 .nav-links {
   display: flex;
-  gap: 36px;
+  gap: 32px;
   list-style: none;
 }
 
 .nav-links a {
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .nav-links a:hover { color: var(--fog); }
@@ -91,7 +95,7 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 120px 48px 80px;
+  padding: calc(var(--nav-h) + 60px) 48px 80px;
   overflow: hidden;
 }
 
@@ -128,17 +132,21 @@ body::before {
   margin-bottom: 24px;
   opacity: 0;
   animation: fadeUp 0.7s ease forwards 0.3s;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(72px, 10vw, 140px);
+  font-size: clamp(64px, 10vw, 140px);
   line-height: 0.92;
   letter-spacing: 0.01em;
   color: var(--fog);
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.5s;
   max-width: 900px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-title em {
@@ -147,13 +155,15 @@ body::before {
 }
 
 .hero-sub {
-  margin-top: 36px;
+  margin-top: 32px;
   max-width: 580px;
   font-size: 17px;
   line-height: 1.85;
   color: var(--text-muted);
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.7s;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-bottom-rule {
@@ -190,6 +200,7 @@ section { position: relative; z-index: 1; }
   width: 24px;
   height: 1px;
   background: var(--steel);
+  flex-shrink: 0;
 }
 
 /* ─── NICHE FINDER ─── */
@@ -207,7 +218,7 @@ section { position: relative; z-index: 1; }
 
 .niche-finder-left h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(40px, 5vw, 64px);
   line-height: 1;
   color: var(--fog);
   letter-spacing: 0.01em;
@@ -283,20 +294,15 @@ section { position: relative; z-index: 1; }
 }
 
 /* ─── TRIFECTA CARDS ─── */
-.trifectas {
-  padding: 80px 0 120px;
-}
+.trifectas { padding: 80px 0 120px; }
 
 .trifecta-card {
   border-bottom: 1px solid var(--rule);
-  padding: 80px 0;
+  padding: 80px 48px;
   display: grid;
   grid-template-columns: 120px 1fr;
-  gap: 0;
   max-width: 1120px;
   margin: 0 auto;
-  padding-left: 48px;
-  padding-right: 48px;
 }
 
 .trifecta-card:last-child { border-bottom: none; }
@@ -310,7 +316,10 @@ section { position: relative; z-index: 1; }
   padding-top: 8px;
 }
 
-.trifecta-content { padding-left: 40px; border-left: 1px solid var(--rule); }
+.trifecta-content {
+  padding-left: 40px;
+  border-left: 1px solid var(--rule);
+}
 
 .trifecta-stage {
   font-family: 'DM Mono', monospace;
@@ -323,7 +332,7 @@ section { position: relative; z-index: 1; }
 
 .trifecta-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(40px, 5vw, 64px);
   line-height: 1;
   color: var(--fog);
   letter-spacing: 0.01em;
@@ -366,6 +375,8 @@ section { position: relative; z-index: 1; }
   text-decoration: none;
   display: inline-block;
   transition: background 0.2s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary:hover { background: var(--ash); }
@@ -386,7 +397,7 @@ section { position: relative; z-index: 1; }
 
 .why-free-left h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(40px, 5vw, 64px);
   line-height: 1;
   color: var(--fog);
   letter-spacing: 0.01em;
@@ -432,7 +443,7 @@ section { position: relative; z-index: 1; }
 
 /* ─── FOOTER ─── */
 .site-footer {
-  padding: 80px 48px 64px;
+  padding: 64px 48px;
   border-top: 1px solid var(--rule);
   max-width: 1120px;
   margin: 0 auto;
@@ -444,6 +455,7 @@ section { position: relative; z-index: 1; }
   align-items: flex-end;
   padding-top: 40px;
   border-top: 1px solid var(--rule);
+  gap: 40px;
 }
 
 .footer-wordmark {
@@ -474,6 +486,7 @@ section { position: relative; z-index: 1; }
   display: flex;
   gap: 20px;
   margin-top: 8px;
+  flex-wrap: wrap;
 }
 
 .footer-legal a {
@@ -484,14 +497,20 @@ section { position: relative; z-index: 1; }
   color: var(--steel);
   text-decoration: none;
   transition: color 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .footer-legal a:hover { color: var(--fog); }
 
 .footer-nav {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .footer-nav a {
@@ -523,34 +542,203 @@ section { position: relative; z-index: 1; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  .nav { padding: 16px 24px; }
+/* ─── LEGAL PAGES ─── */
+.legal-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 64px) 48px 96px;
+  position: relative;
+  z-index: 1;
+}
+
+.legal-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legal-tag::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--steel);
+  flex-shrink: 0;
+}
+
+.legal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  color: var(--fog);
+  margin-bottom: 20px;
+}
+
+.legal-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+.legal-rule {
+  height: 1px;
+  background: var(--rule);
+  margin: 40px 0;
+}
+
+.legal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.legal-lead {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-on-dark);
+  font-style: italic;
+  border-left: 2px solid var(--steel);
+  padding-left: 24px;
+  margin-bottom: 36px;
+}
+
+.legal-body p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.legal-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.04em;
+  color: var(--fog);
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.legal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+
+.legal-list li {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  padding-left: 22px;
+  position: relative;
+}
+
+.legal-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--steel);
+}
+
+.legal-list li strong {
+  color: var(--text-on-dark);
+  font-weight: 700;
+}
+
+.legal-back {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid var(--rule);
+}
+
+.legal-back-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fog);
+  background: transparent;
+  border: 1px solid rgba(237,233,227,0.2);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.legal-back-btn:hover {
+  background: var(--fog);
+  color: var(--deep);
+  border-color: var(--fog);
+}
+
+/* ─── RESPONSIVE — TABLET ─── */
+@media (max-width: 1024px) {
+  .nav { padding: 0 32px; }
+  .hero { padding: calc(var(--nav-h) + 48px) 32px 64px; }
+  .section-inner { padding: 0 32px; }
+  .trifecta-card { padding: 64px 32px; }
+  .site-footer { padding: 64px 32px; }
+  .legal-page { padding: calc(var(--nav-h) + 48px) 32px 80px; }
+}
+
+/* ─── RESPONSIVE — MOBILE ─── */
+@media (max-width: 768px) {
+  :root { --nav-h: 56px; }
+
+  .nav { padding: 0 20px; }
+  .nav-wordmark { font-size: 18px; }
+  .nav-wordmark span { display: none; }
   .nav-links { display: none; }
 
-  .hero { padding: 100px 24px 64px; }
-  .section-inner { padding: 0 24px; }
+  .hero { padding: calc(var(--nav-h) + 40px) 20px 56px; min-height: 85vh; }
+  .hero-bg-text { display: none; }
+  .hero-title { font-size: clamp(52px, 14vw, 88px); }
+  .hero-sub { font-size: 15px; max-width: 100%; }
 
-  .niche-finder .section-inner,
-  .why-free .section-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+  .section-inner { padding: 0 20px; }
 
-  .trifecta-card {
-    grid-template-columns: 1fr;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+  .niche-finder { padding: 72px 0; }
+  .niche-finder .section-inner { grid-template-columns: 1fr; gap: 40px; }
+  .niche-stat-block { padding: 28px; }
 
-  .trifecta-number { font-size: 64px; }
-  .trifecta-content { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); padding-top: 32px; }
+  .stage-divider-text { font-size: 9px; letter-spacing: 0.15em; }
 
-  .site-footer { padding: 80px 24px 48px; }
+  .trifectas { padding: 48px 0 72px; }
+  .trifecta-card { grid-template-columns: 1fr; padding: 48px 20px; gap: 0; }
+  .trifecta-number { font-size: 56px; margin-bottom: 16px; }
+  .trifecta-content { padding-left: 0; border-left: none; border-top: 1px solid var(--rule); padding-top: 28px; }
+  .trifecta-desc { font-size: 15px; }
 
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
+  .why-free { padding: 72px 0; }
+  .why-free .section-inner { grid-template-columns: 1fr; gap: 40px; }
+  .why-free-stat { padding: 36px 28px; }
+
+  .site-footer { padding: 48px 20px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 28px; }
+  .footer-nav { justify-content: flex-start; gap: 16px; }
+
+  .legal-page { padding: calc(var(--nav-h) + 32px) 20px 64px; }
+  .legal-title { font-size: clamp(44px, 12vw, 72px); }
+  .legal-h2 { font-size: 22px; }
+  .legal-lead { font-size: 15px; }
+  .legal-body p { font-size: 14px; }
+  .legal-list li { font-size: 14px; }
+}
+
+/* ─── RESPONSIVE — SMALL MOBILE ─── */
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(44px, 15vw, 68px); }
+  .trifecta-tools { gap: 6px; }
+  .trifecta-tool { font-size: 9px; padding: 6px 10px; }
+  .footer-nav { flex-direction: column; gap: 12px; }
 }
